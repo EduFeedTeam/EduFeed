@@ -65,7 +65,7 @@
 
   <div class="container">
     <div class="row">
-    <form class="col s12">
+    <form class="col s12" onsubmit="return null;">
 
       <!-- Code Eingabefeld -->
       <div id="divcode" class="row" style="display: block;">
@@ -85,12 +85,30 @@
         </div>
       </div>
 
+      <!-- Vorname Eingabefeld -->
+      <div id="divfirstname" class="row" style="display: none;">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">face</i>
+          <input id="firstname" type="text" class="validate">
+          <label for="firstname">Vorname</label>
+        </div>
+      </div>
+
+      <!-- Nachname Eingabefeld -->
+      <div id="divsecondname" class="row" style="display: none;">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">face</i>
+          <input id="secondname" type="text" class="validate" onblur="CreateUsername();">
+          <label for="secondname">Nachname</label>
+        </div>
+      </div>
+
       <!-- Benutzername Eingabefeld -->
       <div id="divusername" class="row" style="display: none;">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input  id="username" type="text" class="validate">
-          <label for="username">Benutzername</label>
+          <input  id="username" type="text" class="validate" disabled>
+          <label for="password"></label>
         </div>
       </div>
 
@@ -103,12 +121,20 @@
         </div>
       </div>
 
-        <!-- Submit Button -->
-        <div class="row center">
-          <button class="btn waves-effect waves-light s12 light-blue" type="submit" name="action" onclick="CheckCode();">Registrieren
+        <!-- Submit Button Code -->
+        <div class="row center" id="buttoncode">
+          <button class="btn waves-effect waves-light s12 light-blue" type="button" name="action" onclick="CheckCode();" >Registrieren
             <i class="material-icons right"></i>
           </button>
         </div>
+
+        <!-- Submit Button Input -->
+        <div class="row center" id="buttoninput" style="display: none;">
+          <button class="btn waves-effect waves-light s12 light-blue" type="button" name="action" onclick="" >Registrieren
+            <i class="material-icons right"></i>
+          </button>
+        </div>
+
       </div>
     </form>
   </div>
